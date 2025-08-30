@@ -111,9 +111,10 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     background-image: url('/lovable-uploads/9da7e86d-cb6c-4fe2-a166-d40e563fc007.png');
-    background-size: 300px 300px;
-    background-repeat: repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: center;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;

@@ -35,12 +35,12 @@ const WorksSection = () => {
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card/30">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Featured Works
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 font-mono tracking-wider uppercase">
+            FEATURED WORKS
           </h2>
-          <div className="w-20 h-1 bg-primary rounded-full mx-auto mb-6"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore my creative portfolio across different mediums and disciplines
+          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-mono uppercase tracking-wide">
+            EXPLORE MY CREATIVE PORTFOLIO ACROSS DIFFERENT MEDIUMS AND DISCIPLINES
           </p>
         </div>
 
@@ -49,40 +49,35 @@ const WorksSection = () => {
             const IconComponent = category.icon;
             return (
               <Link key={index} to={category.path}>
-                <Card className="group relative overflow-hidden h-80 paper-texture hover:shadow-ink transition-all duration-500 cursor-pointer hover:scale-105">
-                  {/* Background gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-60 group-hover:opacity-80 transition-opacity`}></div>
-                  
+                <div className="group relative aspect-square p-6 cursor-pointer brutal-card brutal-texture pixelated-hover">
                   {/* Content */}
-                  <div className="relative z-10 p-8 h-full flex flex-col justify-between">
+                  <div className="flex flex-col justify-between h-full">
                     <div>
-                      <div className="w-16 h-16 rounded-full bg-gradient-paper border-2 border-accent/50 flex items-center justify-center mb-6 group-hover:border-primary/70 transition-colors">
-                        <IconComponent className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
+                      <div className="w-16 h-16 bg-gradient-harsh border-2 border-foreground flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        <IconComponent className="w-8 h-8 text-primary group-hover:text-primary-foreground" />
                       </div>
                       
-                      <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                      <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors font-mono tracking-wider uppercase">
                         {category.title}
                       </h3>
                       
-                      <p className="text-muted-foreground leading-relaxed mb-4">
-                        {category.description}
+                      <p className="text-muted-foreground leading-tight mb-4 font-mono text-sm">
+                        {category.description.toUpperCase()}
                       </p>
                       
-                      <div className="text-sm text-accent font-medium">
-                        {category.projects} Projects
+                      <div className="text-sm text-accent font-bold font-mono tracking-wider uppercase">
+                        {category.projects} PROJECTS
                       </div>
                     </div>
                     
-                    <Button variant="ghost" className="self-start group-hover:bg-primary/10 transition-colors">
-                      View Portfolio
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    <div className="inline-block px-4 py-2 bg-primary text-primary-foreground font-bold font-mono tracking-wider brutal-card pixelated-hover uppercase text-sm">
+                      VIEW PORTFOLIO
+                    </div>
                   </div>
                   
-                  {/* Decorative elements */}
-                  <div className="absolute top-4 right-4 w-3 h-3 bg-primary/30 rounded-full blur-sm group-hover:bg-primary/50 transition-colors"></div>
-                  <div className="absolute bottom-6 left-6 w-2 h-2 bg-accent/40 rounded-full blur-sm"></div>
-                </Card>
+                  {/* Brutal decorative element */}
+                  <div className="absolute top-2 right-2 w-3 h-3 bg-accent border border-foreground group-hover:bg-primary transition-colors"></div>
+                </div>
               </Link>
             );
           })}
@@ -90,10 +85,9 @@ const WorksSection = () => {
         
         <div className="text-center mt-12">
           <Link to="/works">
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-ink">
-              View All Works
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+            <div className="inline-block px-8 py-4 bg-primary text-primary-foreground font-bold font-mono tracking-wider brutal-card pixelated-hover uppercase">
+              VIEW ALL WORKS
+            </div>
           </Link>
         </div>
       </div>

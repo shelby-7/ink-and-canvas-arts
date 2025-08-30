@@ -46,7 +46,7 @@ const SoftwareSection = () => {
               >
                 <div className="flex flex-col items-center justify-center h-full space-y-3">
                   <div className="w-16 h-16 bg-gradient-harsh border-2 border-foreground flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <IconComponent className="w-8 h-8 text-primary group-hover:text-primary-foreground" />
+                    <IconComponent className="w-8 h-8 text-primary" />
                   </div>
                   <div className="text-center">
                     <h3 className="font-bold text-sm text-foreground group-hover:text-primary transition-colors font-mono tracking-wider uppercase">

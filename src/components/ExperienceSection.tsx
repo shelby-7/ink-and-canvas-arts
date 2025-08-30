@@ -50,61 +50,49 @@ const ExperienceSection = () => {
     <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Experience Timeline
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 font-mono tracking-wider uppercase">
+            EXPERIENCE TIMELINE
           </h2>
-          <div className="w-20 h-1 bg-primary rounded-full mx-auto"></div>
+          <div className="w-20 h-1 bg-primary mx-auto"></div>
         </div>
 
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-accent rounded-full hidden md:block">
-            <div className="absolute top-0 w-full h-32 bg-gradient-to-b from-primary/60 to-accent"></div>
-            <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-primary/60 to-accent"></div>
-          </div>
-
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <div key={index} className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col md:space-x-8`}>
                 {/* Content Card */}
                 <div className="w-full md:w-5/12">
-                  <Card className={`p-6 paper-texture shadow-soft hover:shadow-ink transition-all duration-300 ${
-                    exp.type === 'current' ? 'border-primary/50 bg-primary/5' : 
-                    exp.type === 'future' ? 'border-accent/50 bg-accent/10' : ''
-                  }`}>
+                  <div className="group relative aspect-auto p-6 cursor-pointer brutal-card brutal-texture pixelated-hover">
                     <div className="flex items-center justify-between mb-3">
-                      <span className={`text-2xl font-bold ${
-                        exp.type === 'current' ? 'text-primary' : 
-                        exp.type === 'future' ? 'text-accent' : 'text-muted-foreground'
-                      }`}>
+                      <span className="text-2xl font-bold font-mono tracking-wider text-foreground">
                         {exp.year}
                       </span>
-                      <span className={`px-3 py-1 text-xs rounded-full ${
-                        exp.type === 'current' ? 'bg-primary/20 text-primary' :
-                        exp.type === 'future' ? 'bg-accent/20 text-accent' :
-                        'bg-muted text-muted-foreground'
-                      }`}>
+                      <span className="px-3 py-1 text-xs font-mono uppercase bg-accent border border-foreground text-accent-foreground">
                         {exp.company}
                       </span>
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">
+                    <h3 className="text-xl font-bold text-foreground mb-2 font-mono tracking-wider uppercase">
                       {exp.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {exp.description}
+                    <p className="text-muted-foreground leading-tight font-mono text-sm">
+                      {exp.description.toUpperCase()}
                     </p>
-                  </Card>
+                    
+                    {/* Brutal decorative element */}
+                    <div className="absolute top-2 right-2 w-3 h-3 bg-accent border border-foreground group-hover:bg-primary transition-colors"></div>
+                  </div>
                 </div>
 
-                {/* Timeline dot */}
-                <div className="hidden md:flex w-2/12 justify-center">
-                  <div className={`w-6 h-6 rounded-full border-4 border-background shadow-ink ${
+                {/* Timeline dot - fixed positioning */}
+                <div className="hidden md:flex w-2/12 justify-center items-center relative">
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-accent"></div>
+                  <div className={`relative z-10 w-6 h-6 border-4 border-foreground ${
                     exp.type === 'current' ? 'bg-primary' :
                     exp.type === 'future' ? 'bg-accent' :
                     'bg-muted'
                   }`}>
                     {exp.type === 'current' && (
-                      <div className="w-full h-full rounded-full bg-primary animate-pulse"></div>
+                      <div className="w-full h-full bg-primary animate-pulse"></div>
                     )}
                   </div>
                 </div>
