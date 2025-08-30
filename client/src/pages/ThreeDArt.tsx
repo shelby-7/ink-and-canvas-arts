@@ -3,44 +3,52 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Palette, Eye, Calendar, Layers } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import bmwYamahaRender from '@assets/3d_renders/bmw_yamaha_render.jpg';
+import ferrariChandelier from '@assets/3d_renders/ferrari_chandelier.jpg';
+import porscheFeudalJapan from '@assets/3d_renders/porsche_feudal_japan.jpg';
+import mercedesSpace from '@assets/3d_renders/mercedes_space.jpg';
 
 const ThreeDArt = () => {
   const artProjects = [
     {
-      title: 'Abstract Dimensions',
-      date: '2023',
+      title: 'BMW & Yamaha 3D Render',
+      date: '2024',
       software: 'Blender',
-      description: 'Exploration of geometric forms and color in virtual space',
-      category: 'Abstract Art',
-      complexity: 'High'
+      description: 'High-quality 3D renders showcasing automotive and motorcycle design',
+      category: 'Automotive',
+      complexity: 'High',
+      link: 'https://drive.google.com/file/d/1PzANLTOJiqmh872DfuxZ1G3M5Bwa9SGJ/view?usp=drive_link'
     },
     {
-      title: 'Character Design',
-      date: '2023',
+      title: 'Ferrari Chandelier',
+      date: '2024',
       software: 'Cinema 4D',
-      description: 'Stylized character models for animation and games',
-      category: 'Character',
-      complexity: 'High'
+      description: 'A 3D model of Ferrari reimagined as an elegant chandelier in a home setting',
+      category: 'Conceptual',
+      complexity: 'High',
+      link: 'https://drive.google.com/file/d/1DIwd845OkcfNsZMngDd6bvJOo2fpNGXC/view?usp=drive_link'
     },
     {
-      title: 'Product Visualization',
-      date: '2022',
+      title: 'Porsche in Feudal Japan',
+      date: '2024',
+      software: 'Blender',
+      description: 'Porsche render set in the atmospheric environment of feudal Japan',
+      category: 'Environmental',
+      complexity: 'High',
+      link: 'https://drive.google.com/file/d/1g7gX8SDcuBI5plHAVhFXTO8MqX28EPtq/view?usp=drive_link'
+    },
+    {
+      title: 'Mercedes in Space',
+      date: '2024',
       software: 'KeyShot',
-      description: 'Photorealistic rendering of consumer products',
-      category: 'Commercial',
-      complexity: 'Medium'
-    },
-    {
-      title: 'Architectural Space',
-      date: '2022',
-      software: 'SketchUp',
-      description: 'Interior and exterior architectural visualizations',
-      category: 'Architecture',
-      complexity: 'High'
+      description: 'A Mercedes reimagined in the vastness of space with cosmic elements',
+      category: 'Sci-Fi',
+      complexity: 'High',
+      link: 'https://drive.google.com/file/d/1PHqYnk1aBLmopdydRYfmnHVlwGbsmsqo/view?usp=drive_link'
     },
     {
       title: 'Digital Sculpture',
-      date: '2021',
+      date: '2023',
       software: 'ZBrush',
       description: 'Organic forms and detailed digital sculptures',
       category: 'Sculpture',
@@ -48,7 +56,7 @@ const ThreeDArt = () => {
     },
     {
       title: 'Motion Graphics',
-      date: '2021',
+      date: '2023',
       software: 'After Effects',
       description: '3D animated elements for video projects',
       category: 'Animation',
@@ -93,13 +101,26 @@ const ThreeDArt = () => {
                 <Card key={index} className="group overflow-hidden paper-texture hover:shadow-ink transition-all duration-300 cursor-pointer hover:scale-105">
                   {/* 3D Art Preview */}
                   <div className="aspect-square bg-gradient-to-br from-primary/15 to-accent/25 relative overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="relative">
-                        <Palette className="w-20 h-20 text-primary/30" />
-                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary/20 rounded-full animate-pulse"></div>
-                        <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-accent/30 rounded-full animate-pulse delay-300"></div>
+                    {index < 4 ? (
+                      <img 
+                        src={[
+                          bmwYamahaRender,
+                          ferrariChandelier,
+                          porscheFeudalJapan,
+                          mercedesSpace
+                        ][index]} 
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="relative">
+                          <Palette className="w-20 h-20 text-primary/30" />
+                          <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary/20 rounded-full animate-pulse"></div>
+                          <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-accent/30 rounded-full animate-pulse delay-300"></div>
+                        </div>
                       </div>
-                    </div>
+                    )}
                     <div className="absolute top-4 right-4 px-3 py-1 bg-card/80 backdrop-blur-sm rounded-full">
                       <span className="text-xs font-medium text-foreground">{project.category}</span>
                     </div>
@@ -134,10 +155,19 @@ const ThreeDArt = () => {
                       </div>
                     </div>
                     
-                    <Button variant="ghost" className="w-full group-hover:bg-primary/10 transition-colors">
-                      <Eye className="w-4 h-4 mr-2" />
-                      View 3D Model
-                    </Button>
+                    {project.link ? (
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="block">
+                        <Button variant="ghost" className="w-full group-hover:bg-primary/10 transition-colors">
+                          <Eye className="w-4 h-4 mr-2" />
+                          View
+                        </Button>
+                      </a>
+                    ) : (
+                      <Button variant="ghost" className="w-full group-hover:bg-primary/10 transition-colors">
+                        <Eye className="w-4 h-4 mr-2" />
+                        View
+                      </Button>
+                    )}
                   </div>
                 </Card>
               ))}
