@@ -163,7 +163,7 @@ All colors MUST be HSL.
   }
 
   .pixelated-profile {
-    filter: saturate(70%) contrast(1.1);
+    filter: saturate(30%) contrast(1.1);
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
