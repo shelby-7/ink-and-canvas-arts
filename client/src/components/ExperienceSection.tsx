@@ -62,24 +62,24 @@ const ExperienceSection = () => {
               <div key={index} className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col md:space-x-8`}>
                 {/* Content Card */}
                 <div className="w-full md:w-5/12">
-                  <div className="group relative aspect-auto p-6 cursor-pointer brutal-card brutal-texture pixelated-hover">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-2xl font-bold font-mono tracking-wider text-foreground">
+                  <div className="group relative aspect-auto p-8 cursor-pointer brutal-card brutal-texture pixelated-hover">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-3xl font-bold font-mono tracking-wider text-foreground">
                         {exp.year}
                       </span>
-                      <span className="px-3 py-1 text-xs font-mono uppercase bg-accent border border-foreground text-accent-foreground">
+                      <span className="px-4 py-2 text-sm font-mono uppercase bg-accent border border-foreground text-accent-foreground">
                         {exp.company}
                       </span>
                     </div>
-                    <h3 className="text-xl font-bold text-foreground mb-2 font-mono tracking-wider uppercase">
+                    <h3 className="text-2xl font-bold text-foreground mb-3 font-mono tracking-wider uppercase">
                       {exp.title}
                     </h3>
-                    <p className="text-muted-foreground leading-tight font-mono text-sm">
+                    <p className="text-muted-foreground leading-relaxed font-mono text-base">
                       {exp.description.toUpperCase()}
                     </p>
                     
                     {/* Brutal decorative element */}
-                    <div className="absolute top-2 right-2 w-3 h-3 bg-accent border border-foreground group-hover:bg-primary transition-colors"></div>
+                    <div className="absolute top-3 right-3 w-4 h-4 bg-accent border border-foreground group-hover:bg-primary transition-colors"></div>
                   </div>
                 </div>
 

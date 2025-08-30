@@ -28,16 +28,16 @@ const AboutSection = () => {
               <div className="w-20 h-1 bg-primary rounded-full"></div>
             </div>
             
-            <div className="brutal-card p-6 brutal-texture">
-              <p className="text-lg text-muted-foreground leading-tight mb-4 font-mono">
+            <div className="bg-gradient-harsh brutal-card brutal-texture p-6">
+              <p className="text-lg text-foreground leading-relaxed mb-4 font-mono">
                 LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.
               </p>
               
-              <p className="text-lg text-muted-foreground leading-tight mb-4 font-mono">
+              <p className="text-lg text-foreground leading-relaxed mb-4 font-mono">
                 DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR.
               </p>
               
-              <p className="text-lg text-muted-foreground leading-tight font-mono">
+              <p className="text-lg text-foreground leading-relaxed font-mono">
                 SED UT PERSPICIATIS UNDE OMNIS ISTE NATUS ERROR SIT VOLUPTATEM ACCUSANTIUM DOLOREMQUE LAUDANTIUM.
               </p>
             </div>
