@@ -125,7 +125,7 @@ All colors MUST be HSL.
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    filter: saturate(0%) brightness(50%);
+    filter: none;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
