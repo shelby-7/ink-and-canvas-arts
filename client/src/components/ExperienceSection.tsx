@@ -3,45 +3,52 @@ import { Card } from '@/components/ui/card';
 const ExperienceSection = () => {
   const experiences = [
     {
-      year: '2019',
+      year: '2020',
       title: 'Started Photography',
       company: 'Freelance',
       description: 'Began my journey in photography, learning the fundamentals and developing my artistic eye.',
       type: 'start'
     },
     {
-      year: '2020',
-      title: 'Video Production',
-      company: 'Creative Studio',
-      description: 'Expanded into video production, working with local businesses and events.',
-      type: 'milestone'
-    },
-    {
       year: '2021',
-      title: '3D Artist',
-      company: 'Design Agency',
-      description: 'Transitioned into 3D art and visualization, creating stunning digital artwork.',
+      title: 'Video Production',
+      company: 'Freelance',
+      description: 'STARTED EDITING MONTAGES ON MY MOMS PHONE FOR YOUTUBE LOL',
       type: 'milestone'
     },
     {
       year: '2022',
-      title: 'Senior Creative',
-      company: 'Media Company',
-      description: 'Led creative projects combining photography, videography, and 3D art.',
+      title: 'LA DÉMOCRATIE',
+      company: 'Production House',
+      description: 'STARTED A PRODUCTION HOUSE WITH TWO OF MY FRIENDS IN COLLEGE, MAKING AWARD WINNING SHORTFILMS',
       type: 'milestone'
     },
     {
       year: '2023',
-      title: 'Art Director',
-      company: 'Innovation Lab',
-      description: 'Currently directing visual campaigns and mentoring upcoming artists.',
+      title: '3D Artist',
+      company: 'Media Company',
+      description: 'TRANSITIONED INTO 3D ART AND VISUALIZATION, CREATING STUNNING DIGITAL ARTWORK',
+      type: 'milestone'
+    },
+    {
+      year: '2023',
+      title: 'Media Lead',
+      company: 'Media Head',
+      description: 'BECAME THE LEAD OF GDSC IIITN, A CLUB IN COLLEGE, WHERE I LED THE TEAM ASSIGNED TO ME TO COMPLETE 3 COMPLETE COLLEGE EVENTS OVER THE COURSE OF A YEAR',
       type: 'current'
     },
     {
       year: '2024',
+      title: 'SMMA Video editor',
+      company: 'Video editing intern',
+      description: 'WORKED FOR WASSUP BHOPAL, AN INSTAGRAM PAGE WITH OVER 150K FOLLOWERS, HELPED THEM SCORE PARTNERSHIPS AND LOADS OF VIEWS AND LIKES OVER THE COURSE OF A YEAR',
+      type: 'milestone'
+    },
+    {
+      year: '2025+',
       title: 'Future Goals',
       company: 'Expanding Horizons',
-      description: 'Planning to explore AI-assisted creative workflows and international collaborations.',
+      description: 'PLANNING TO EXPLORE AI-ASSISTED CREATIVE WORKFLOWS AND INTERNATIONAL COLLABORATIONS.',
       type: 'future'
     },
   ];
