@@ -2,7 +2,7 @@ import Navigation from '@/components/Navigation';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from '@/components/ui/dialog';
-import { ArrowLeft, Calendar, X, Palette } from 'lucide-react';
+import { ArrowLeft, Calendar, X, Palette, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import bmwYamahaRender from '@assets/3d_renders/bmw_yamaha_render.jpg';
@@ -30,7 +30,7 @@ const ThreeDArt = () => {
     {
       title: 'Ferrari Chandelier',
       date: '2024',
-      software: 'Cinema 4D',
+      software: 'Blender',
       description: 'A 3D model of Ferrari reimagined as an elegant chandelier in a home setting',
       image: ferrariChandelier,
       thumbnail: ferrariChandelierThumbnail,
@@ -48,7 +48,7 @@ const ThreeDArt = () => {
     {
       title: 'Mercedes in Space',
       date: '2024',
-      software: 'KeyShot',
+      software: 'Blender',
       description: 'A Mercedes reimagined in the vastness of space with cosmic elements',
       image: mercedesSpace,
       thumbnail: mercedesSpaceThumbnail,
@@ -100,6 +100,10 @@ const ThreeDArt = () => {
                           alt={project.title}
                           className="w-full h-full object-cover"
                         />
+                        {/* Play button overlay */}
+                        <div className="absolute bottom-4 right-4 w-8 h-8 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center">
+                          <Play className="w-4 h-4 text-white fill-white" />
+                        </div>
                         {/* Decorative 3D elements */}
                         <div className="absolute top-8 left-8 w-4 h-4 bg-accent/40 rounded-full blur-sm transform rotate-45"></div>
                         <div className="absolute bottom-12 right-12 w-3 h-3 bg-primary/30 rounded-full blur-sm"></div>
