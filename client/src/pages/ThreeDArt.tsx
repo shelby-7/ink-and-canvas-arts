@@ -1,7 +1,7 @@
 import Navigation from '@/components/Navigation';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from '@/components/ui/dialog';
 import { ArrowLeft, Calendar, X, Palette } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -9,6 +9,10 @@ import bmwYamahaRender from '@assets/3d_renders/bmw_yamaha_render.jpg';
 import ferrariChandelier from '@assets/3d_renders/ferrari_chandelier.jpg';
 import porscheFeudalJapan from '@assets/3d_renders/porsche_feudal_japan.jpg';
 import mercedesSpace from '@assets/3d_renders/mercedes_space.jpg';
+import bmwYamahaThumbnail from '@assets/3d_renders/bmw_yamaha_thumbnail.jpg';
+import ferrariChandelierThumbnail from '@assets/3d_renders/ferrari_chandelier_thumbnail.jpg';
+import porscheFeudalThumbnail from '@assets/3d_renders/porsche_feudal_thumbnail.jpg';
+import mercedesSpaceThumbnail from '@assets/3d_renders/mercedes_space_thumbnail.jpg';
 
 const ThreeDArt = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -20,6 +24,7 @@ const ThreeDArt = () => {
       software: 'Blender',
       description: 'High-quality 3D renders showcasing automotive and motorcycle design',
       image: bmwYamahaRender,
+      thumbnail: bmwYamahaThumbnail,
       link: 'https://drive.google.com/file/d/1PzANLTOJiqmh872DfuxZ1G3M5Bwa9SGJ/view?usp=drive_link'
     },
     {
@@ -28,6 +33,7 @@ const ThreeDArt = () => {
       software: 'Cinema 4D',
       description: 'A 3D model of Ferrari reimagined as an elegant chandelier in a home setting',
       image: ferrariChandelier,
+      thumbnail: ferrariChandelierThumbnail,
       link: 'https://drive.google.com/file/d/1DIwd845OkcfNsZMngDd6bvJOo2fpNGXC/view?usp=drive_link'
     },
     {
@@ -36,6 +42,7 @@ const ThreeDArt = () => {
       software: 'Blender',
       description: 'Porsche render set in the atmospheric environment of feudal Japan',
       image: porscheFeudalJapan,
+      thumbnail: porscheFeudalThumbnail,
       link: 'https://drive.google.com/file/d/1g7gX8SDcuBI5plHAVhFXTO8MqX28EPtq/view?usp=drive_link'
     },
     {
@@ -44,6 +51,7 @@ const ThreeDArt = () => {
       software: 'KeyShot',
       description: 'A Mercedes reimagined in the vastness of space with cosmic elements',
       image: mercedesSpace,
+      thumbnail: mercedesSpaceThumbnail,
       link: 'https://drive.google.com/file/d/1PHqYnk1aBLmopdydRYfmnHVlwGbsmsqo/view?usp=drive_link'
     }
   ];
@@ -88,7 +96,7 @@ const ThreeDArt = () => {
                       {/* 3D Art Preview */}
                       <div className="aspect-square bg-gradient-to-br from-primary/15 to-accent/25 relative overflow-hidden">
                         <img 
-                          src={project.image} 
+                          src={project.thumbnail} 
                           alt={project.title}
                           className="w-full h-full object-cover"
                         />
@@ -121,6 +129,7 @@ const ThreeDArt = () => {
                   </DialogTrigger>
                   
                   <DialogContent className="max-w-4xl max-h-[90vh] p-0 bg-background border-2 border-foreground">
+                    <DialogTitle className="sr-only">{project.title}</DialogTitle>
                     <div className="relative">
                       <img 
                         src={project.image} 
