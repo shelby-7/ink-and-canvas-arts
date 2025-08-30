@@ -2,35 +2,41 @@ import Navigation from '@/components/Navigation';
 import { Card } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Camera, Video, Palette, ArrowRight } from 'lucide-react';
+import photographyThumbnail from '@assets/photography_thumbnail.jpg';
+import videographyThumbnail from '@assets/videography_thumbnail.jpg';
+import threeDartThumbnail from '@assets/3d_art_thumbnail.jpg';
 
 const Works = () => {
   const workCategories = [
     {
       title: 'Photography',
-      description: 'Portrait, landscape, and commercial photography showcasing diverse styles and techniques',
+      description: 'Astrophotography, Portrait, Nature photography, showcasing diverse styles, techniques and versatile colors',
       icon: Camera,
       path: '/works/photography',
       color: 'from-primary/20 to-accent/20',
-      projects: 24,
-      featured: ['Wedding Photography', 'Product Shots', 'Nature Portraits']
+      projects: null,
+      featured: ['Astrophotography', 'Automotive photography', 'Nature Photography'],
+      thumbnail: photographyThumbnail
     },
     {
       title: 'Videography',
-      description: 'Music videos, commercials, and documentary work with cinematic storytelling',
+      description: 'Shortfilms where colors tell stories',
       icon: Video,
       path: '/works/videography',
       color: 'from-accent/20 to-primary/20',
-      projects: 18,
-      featured: ['Music Videos', 'Brand Commercials', 'Event Coverage']
+      projects: null,
+      featured: ['Award winning shortfilms', 'Event Coverage', 'Brand Commercials'],
+      thumbnail: videographyThumbnail
     },
     {
       title: '3D Art',
-      description: 'Digital sculptures, architectural visualizations, and abstract art pieces',
+      description: 'This is where your dreams lie',
       icon: Palette,
       path: '/works/3d-art',
       color: 'from-primary/15 to-accent/25',
-      projects: 12,
-      featured: ['Character Design', 'Product Visualization', 'Abstract Art']
+      projects: null,
+      featured: ['Abstract art', 'Visualisations', 'Sci fi scenes'],
+      thumbnail: threeDartThumbnail
     }
   ];
 
@@ -67,9 +73,6 @@ const Works = () => {
                             <h2 className="text-3xl font-bold text-foreground">
                               {category.title}
                             </h2>
-                            <span className="text-accent font-medium">
-                              {category.projects} Projects
-                            </span>
                           </div>
                         </div>
                         
@@ -98,10 +101,12 @@ const Works = () => {
                       </div>
                       
                       {/* Visual Side */}
-                      <div className={`relative bg-gradient-to-br ${category.color} min-h-[300px] lg:min-h-[400px]`}>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <IconComponent className="w-32 h-32 text-primary/20" />
-                        </div>
+                      <div className="relative min-h-[300px] lg:min-h-[400px] overflow-hidden">
+                        <img 
+                          src={category.thumbnail} 
+                          alt={category.title}
+                          className="w-full h-full object-cover"
+                        />
                         {/* Decorative spots */}
                         <div className="absolute top-6 right-6 w-4 h-4 bg-primary/30 rounded-full blur-sm"></div>
                         <div className="absolute bottom-8 left-8 w-6 h-6 bg-accent/40 rounded-full blur-sm"></div>
