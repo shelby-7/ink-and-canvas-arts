@@ -2,7 +2,7 @@ import Navigation from '@/components/Navigation';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import { ArrowLeft, Calendar, X } from 'lucide-react';
+import { ArrowLeft, Calendar, X, Palette } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import bmwYamahaRender from '@assets/3d_renders/bmw_yamaha_render.jpg';
