@@ -8,14 +8,14 @@ const AboutSection = () => {
           {/* Profile Image */}
           <div className="flex justify-center lg:justify-start">
             <div className="relative">
-              <div className="w-80 h-80 rounded-full bg-gradient-paper border-4 border-accent shadow-ink overflow-hidden">
-                <div className="w-full h-full bg-muted flex items-center justify-center text-muted-foreground text-6xl font-light">
-                  <span className="text-center">Face<br />Picture</span>
+              <div className="w-80 h-80 bg-gradient-harsh brutal-card brutal-texture overflow-hidden pixelated-hover">
+                <div className="w-full h-full bg-muted flex items-center justify-center text-muted-foreground text-6xl font-bold font-mono">
+                  <span className="text-center tracking-wider">FACE<br />PICTURE</span>
                 </div>
               </div>
-              {/* Decorative ink spots */}
-              <div className="absolute -top-4 -right-4 w-6 h-6 bg-primary/20 rounded-full blur-sm"></div>
-              <div className="absolute -bottom-6 -left-6 w-8 h-8 bg-accent/30 rounded-full blur-sm"></div>
+              {/* Brutal decorative elements */}
+              <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary border-2 border-foreground"></div>
+              <div className="absolute -bottom-2 -left-2 w-12 h-12 bg-accent border-2 border-foreground"></div>
             </div>
           </div>
 
@@ -28,26 +28,26 @@ const AboutSection = () => {
               <div className="w-20 h-1 bg-primary rounded-full"></div>
             </div>
             
-            <Card className="p-6 paper-texture">
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            <div className="brutal-card p-6 brutal-texture">
+              <p className="text-lg text-muted-foreground leading-tight mb-4 font-mono">
+                LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.
               </p>
               
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <p className="text-lg text-muted-foreground leading-tight mb-4 font-mono">
+                DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR.
               </p>
               
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+              <p className="text-lg text-muted-foreground leading-tight font-mono">
+                SED UT PERSPICIATIS UNDE OMNIS ISTE NATUS ERROR SIT VOLUPTATEM ACCUSANTIUM DOLOREMQUE LAUDANTIUM.
               </p>
-            </Card>
+            </div>
 
             <div className="pt-4">
               <a 
                 href="#contact" 
-                className="inline-block px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors shadow-ink"
+                className="inline-block px-8 py-4 bg-primary text-primary-foreground font-bold font-mono tracking-wider brutal-card pixelated-hover uppercase"
               >
-                Contact me
+                CONTACT ME
               </a>
             </div>
           </div>

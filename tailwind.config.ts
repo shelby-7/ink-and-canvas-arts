@@ -69,14 +69,14 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			backgroundImage: {
-				'gradient-paper': 'var(--gradient-paper)',
+				'gradient-harsh': 'var(--gradient-harsh)',
 			},
 			boxShadow: {
-				'soft': 'var(--shadow-soft)',
-				'ink': 'var(--shadow-ink)',
+				'brutal': 'var(--shadow-brutal)',
+				'pixelated': 'var(--shadow-pixelated)',
 			},
 			transitionTimingFunction: {
-				'smooth': 'var(--transition-smooth)',
+				'pixelated': 'var(--transition-pixelated)',
 			},
 			keyframes: {
 				'accordion-down': {

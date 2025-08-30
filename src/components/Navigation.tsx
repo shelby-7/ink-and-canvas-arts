@@ -21,12 +21,12 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-sm border-b border-border shadow-soft">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-card border-b-4 border-foreground shadow-brutal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="font-bold text-xl text-foreground hover:text-primary transition-colors">
-            Portfolio
+          <Link to="/" className="font-bold text-xl text-foreground hover:text-primary transition-colors font-mono tracking-wider uppercase">
+            PORTFOLIO
           </Link>
 
           {/* Desktop Navigation */}
@@ -35,10 +35,10 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-4 py-2 border-2 border-transparent text-sm font-bold font-mono tracking-wider uppercase transition-colors pixelated-hover ${
                   isActive(item.path)
-                    ? 'text-primary bg-accent/50'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-accent/30'
+                    ? 'text-primary bg-accent border-primary'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-accent hover:border-foreground'
                 }`}
               >
                 {item.name}

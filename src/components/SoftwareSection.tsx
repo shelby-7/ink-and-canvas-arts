@@ -40,27 +40,27 @@ const SoftwareSection = () => {
           {software.map((item, index) => {
             const IconComponent = item.icon;
             return (
-              <Card 
+              <div 
                 key={index} 
-                className="group relative aspect-square p-6 hover:shadow-ink transition-all duration-300 cursor-pointer paper-texture hover:scale-105"
+                className="group relative aspect-square p-6 cursor-pointer brutal-card brutal-texture pixelated-hover"
               >
                 <div className="flex flex-col items-center justify-center h-full space-y-3">
-                  <div className="w-16 h-16 rounded-full bg-gradient-paper border-2 border-accent/50 flex items-center justify-center group-hover:border-primary/70 transition-colors">
-                    <IconComponent className="w-8 h-8 text-primary group-hover:text-primary/80" />
+                  <div className="w-16 h-16 bg-gradient-harsh border-2 border-foreground flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <IconComponent className="w-8 h-8 text-primary group-hover:text-primary-foreground" />
                   </div>
                   <div className="text-center">
-                    <h3 className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors">
+                    <h3 className="font-bold text-sm text-foreground group-hover:text-primary transition-colors font-mono tracking-wider uppercase">
                       {item.name}
                     </h3>
-                    <p className="text-xs text-muted-foreground mt-1">
+                    <p className="text-xs text-muted-foreground mt-1 font-mono uppercase">
                       {item.category}
                     </p>
                   </div>
                 </div>
                 
-                {/* Decorative spot */}
-                <div className="absolute top-2 right-2 w-2 h-2 bg-accent/40 rounded-full blur-sm group-hover:bg-primary/40 transition-colors"></div>
-              </Card>
+                {/* Brutal decorative element */}
+                <div className="absolute top-2 right-2 w-3 h-3 bg-accent border border-foreground group-hover:bg-primary transition-colors"></div>
+              </div>
             );
           })}
         </div>

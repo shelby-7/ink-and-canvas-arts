@@ -8,44 +8,44 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Portfolio theme - rough paper with artistic elements */
-    --background: 36 8% 88%;
-    --background-texture: 36 6% 85%;
-    --foreground: 220 13% 18%;
-    --ink-spot: 220 15% 12%;
+    /* Brutalist dark theme */
+    --background: 0 0% 8%;
+    --background-texture: 0 0% 6%;
+    --foreground: 0 0% 95%;
+    --noise-spot: 0 0% 3%;
 
-    --card: 40 15% 94%;
-    --card-foreground: 220 13% 18%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 40 15% 94%;
-    --popover-foreground: 220 13% 18%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 220 15% 12%;
-    --primary-foreground: 36 8% 88%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 8%;
 
-    --secondary: 36 12% 80%;
-    --secondary-foreground: 220 13% 18%;
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 36 10% 82%;
-    --muted-foreground: 220 8% 46%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 25 15% 65%;
-    --accent-foreground: 220 13% 18%;
+    --accent: 0 0% 25%;
+    --accent-foreground: 0 0% 95%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 36 8% 75%;
-    --input: 40 15% 94%;
-    --ring: 220 15% 12%;
+    --border: 0 0% 20%;
+    --input: 0 0% 12%;
+    --ring: 0 0% 98%;
 
-    --radius: 0.75rem;
+    --radius: 0rem;
     
-    /* Custom design tokens */
-    --gradient-paper: linear-gradient(135deg, hsl(var(--background)), hsl(var(--background-texture)));
-    --shadow-soft: 0 8px 32px -4px hsl(var(--ink-spot) / 0.1);
-    --shadow-ink: 0 4px 16px -2px hsl(var(--ink-spot) / 0.2);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Brutalist design tokens */
+    --gradient-harsh: linear-gradient(90deg, hsl(var(--background)), hsl(var(--background-texture)));
+    --shadow-brutal: 4px 4px 0px hsl(var(--foreground));
+    --shadow-pixelated: 2px 2px 0px hsl(var(--primary));
+    --transition-pixelated: all 0.1s steps(3, end);
 
     --sidebar-background: 0 0% 98%;
 
@@ -110,27 +110,54 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    background-image: 
-      radial-gradient(circle at 20% 30%, hsl(var(--ink-spot) / 0.08) 2px, transparent 3px),
-      radial-gradient(circle at 80% 70%, hsl(var(--ink-spot) / 0.06) 3px, transparent 4px),
-      radial-gradient(circle at 40% 80%, hsl(var(--ink-spot) / 0.05) 1px, transparent 2px),
-      radial-gradient(circle at 90% 20%, hsl(var(--ink-spot) / 0.07) 2px, transparent 3px),
-      radial-gradient(circle at 10% 90%, hsl(var(--ink-spot) / 0.04) 4px, transparent 5px),
-      linear-gradient(0deg, hsl(var(--background)) 0%, hsl(var(--background-texture)) 100%);
-    background-size: 
-      400px 400px,
-      600px 600px, 
-      300px 300px,
-      500px 500px,
-      700px 700px,
-      100% 100%;
+    background-image: url('/lovable-uploads/9da7e86d-cb6c-4fe2-a166-d40e563fc007.png');
+    background-size: 300px 300px;
+    background-repeat: repeat;
     background-attachment: fixed;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
   }
   
-  .paper-texture {
+  .brutal-texture {
     background-image: 
-      radial-gradient(circle at 15% 25%, hsl(var(--ink-spot) / 0.03) 1px, transparent 2px),
-      radial-gradient(circle at 85% 75%, hsl(var(--ink-spot) / 0.04) 2px, transparent 3px);
-    background-size: 200px 200px, 350px 350px;
+      repeating-linear-gradient(
+        90deg,
+        hsl(var(--noise-spot) / 0.1) 0px,
+        hsl(var(--noise-spot) / 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        hsl(var(--noise-spot) / 0.1) 0px,
+        hsl(var(--noise-spot) / 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+      );
+  }
+
+  .pixelated-hover {
+    transition: var(--transition-pixelated);
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  .pixelated-hover:hover {
+    transform: scale(1.05);
+    filter: contrast(1.2) brightness(1.1);
+    box-shadow: var(--shadow-pixelated);
+  }
+
+  .brutal-card {
+    border: 2px solid hsl(var(--foreground));
+    box-shadow: var(--shadow-brutal);
+    transition: var(--transition-pixelated);
+  }
+
+  .brutal-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px hsl(var(--foreground));
   }
 }
