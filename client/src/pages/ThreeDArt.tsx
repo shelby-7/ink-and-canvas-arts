@@ -1,22 +1,25 @@
 import Navigation from '@/components/Navigation';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Palette, Eye, Calendar, Layers } from 'lucide-react';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { ArrowLeft, Calendar, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import bmwYamahaRender from '@assets/3d_renders/bmw_yamaha_render.jpg';
 import ferrariChandelier from '@assets/3d_renders/ferrari_chandelier.jpg';
 import porscheFeudalJapan from '@assets/3d_renders/porsche_feudal_japan.jpg';
 import mercedesSpace from '@assets/3d_renders/mercedes_space.jpg';
 
 const ThreeDArt = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+  
   const artProjects = [
     {
       title: 'BMW & Yamaha 3D Render',
       date: '2024',
       software: 'Blender',
       description: 'High-quality 3D renders showcasing automotive and motorcycle design',
-      category: 'Automotive',
-      complexity: 'High',
+      image: bmwYamahaRender,
       link: 'https://drive.google.com/file/d/1PzANLTOJiqmh872DfuxZ1G3M5Bwa9SGJ/view?usp=drive_link'
     },
     {
@@ -24,8 +27,7 @@ const ThreeDArt = () => {
       date: '2024',
       software: 'Cinema 4D',
       description: 'A 3D model of Ferrari reimagined as an elegant chandelier in a home setting',
-      category: 'Conceptual',
-      complexity: 'High',
+      image: ferrariChandelier,
       link: 'https://drive.google.com/file/d/1DIwd845OkcfNsZMngDd6bvJOo2fpNGXC/view?usp=drive_link'
     },
     {
@@ -33,8 +35,7 @@ const ThreeDArt = () => {
       date: '2024',
       software: 'Blender',
       description: 'Porsche render set in the atmospheric environment of feudal Japan',
-      category: 'Environmental',
-      complexity: 'High',
+      image: porscheFeudalJapan,
       link: 'https://drive.google.com/file/d/1g7gX8SDcuBI5plHAVhFXTO8MqX28EPtq/view?usp=drive_link'
     },
     {
@@ -42,25 +43,8 @@ const ThreeDArt = () => {
       date: '2024',
       software: 'KeyShot',
       description: 'A Mercedes reimagined in the vastness of space with cosmic elements',
-      category: 'Sci-Fi',
-      complexity: 'High',
+      image: mercedesSpace,
       link: 'https://drive.google.com/file/d/1PHqYnk1aBLmopdydRYfmnHVlwGbsmsqo/view?usp=drive_link'
-    },
-    {
-      title: 'Digital Sculpture',
-      date: '2023',
-      software: 'ZBrush',
-      description: 'Organic forms and detailed digital sculptures',
-      category: 'Sculpture',
-      complexity: 'High'
-    },
-    {
-      title: 'Motion Graphics',
-      date: '2023',
-      software: 'After Effects',
-      description: '3D animated elements for video projects',
-      category: 'Animation',
-      complexity: 'Medium'
     }
   ];
 
@@ -96,80 +80,80 @@ const ThreeDArt = () => {
             </div>
 
             {/* Portfolio Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {artProjects.map((project, index) => (
-                <Card key={index} className="group overflow-hidden paper-texture hover:shadow-ink transition-all duration-300 cursor-pointer hover:scale-105">
-                  {/* 3D Art Preview */}
-                  <div className="aspect-square bg-gradient-to-br from-primary/15 to-accent/25 relative overflow-hidden">
-                    {index < 4 ? (
-                      <img 
-                        src={[
-                          bmwYamahaRender,
-                          ferrariChandelier,
-                          porscheFeudalJapan,
-                          mercedesSpace
-                        ][index]} 
-                        alt={project.title}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="relative">
-                          <Palette className="w-20 h-20 text-primary/30" />
-                          <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary/20 rounded-full animate-pulse"></div>
-                          <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-accent/30 rounded-full animate-pulse delay-300"></div>
+                <Dialog key={index}>
+                  <DialogTrigger asChild>
+                    <Card className="group overflow-hidden paper-texture hover:shadow-ink transition-all duration-300 cursor-pointer hover:scale-105">
+                      {/* 3D Art Preview */}
+                      <div className="aspect-square bg-gradient-to-br from-primary/15 to-accent/25 relative overflow-hidden">
+                        <img 
+                          src={project.image} 
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                        />
+                        {/* Decorative 3D elements */}
+                        <div className="absolute top-8 left-8 w-4 h-4 bg-accent/40 rounded-full blur-sm transform rotate-45"></div>
+                        <div className="absolute bottom-12 right-12 w-3 h-3 bg-primary/30 rounded-full blur-sm"></div>
+                        <div className="absolute top-1/2 right-8 w-2 h-2 bg-accent/50 rounded-full blur-sm"></div>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="p-6">
+                        <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                          {project.title}
+                        </h3>
+                        <p className="text-muted-foreground mb-4 leading-relaxed">
+                          {project.description}
+                        </p>
+                        
+                        <div className="flex items-center justify-between text-sm text-muted-foreground">
+                          <div className="flex items-center">
+                            <Calendar className="w-4 h-4 mr-1" />
+                            {project.date}
+                          </div>
+                          <div className="text-accent font-medium">
+                            {project.software}
+                          </div>
                         </div>
                       </div>
-                    )}
-                    <div className="absolute top-4 right-4 px-3 py-1 bg-card/80 backdrop-blur-sm rounded-full">
-                      <span className="text-xs font-medium text-foreground">{project.category}</span>
-                    </div>
-                    <div className="absolute bottom-4 left-4 px-3 py-1 bg-card/80 backdrop-blur-sm rounded-full">
-                      <div className="flex items-center text-xs font-medium text-foreground">
-                        <Layers className="w-3 h-3 mr-1" />
-                        {project.complexity}
-                      </div>
-                    </div>
-                    {/* Decorative 3D elements */}
-                    <div className="absolute top-8 left-8 w-4 h-4 bg-accent/40 rounded-full blur-sm transform rotate-45"></div>
-                    <div className="absolute bottom-12 right-12 w-3 h-3 bg-primary/30 rounded-full blur-sm"></div>
-                    <div className="absolute top-1/2 right-8 w-2 h-2 bg-accent/50 rounded-full blur-sm"></div>
-                  </div>
+                    </Card>
+                  </DialogTrigger>
                   
-                  {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-4 leading-relaxed">
-                      {project.description}
-                    </p>
-                    
-                    <div className="flex items-center justify-between text-sm text-muted-foreground mb-3">
-                      <div className="flex items-center">
-                        <Calendar className="w-4 h-4 mr-1" />
-                        {project.date}
-                      </div>
-                      <div className="text-accent font-medium">
-                        {project.software}
+                  <DialogContent className="max-w-4xl max-h-[90vh] p-0 bg-background border-2 border-foreground">
+                    <div className="relative">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-auto max-h-[70vh] object-contain"
+                      />
+                      <div className="p-6">
+                        <h2 className="text-2xl font-bold text-foreground mb-2 font-mono tracking-wider uppercase">
+                          {project.title}
+                        </h2>
+                        <p className="text-muted-foreground mb-4 leading-relaxed">
+                          {project.description}
+                        </p>
+                        <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
+                          <div className="flex items-center">
+                            <Calendar className="w-4 h-4 mr-1" />
+                            {project.date}
+                          </div>
+                          <div className="text-accent font-medium">
+                            {project.software}
+                          </div>
+                        </div>
+                        {project.link && (
+                          <a href={project.link} target="_blank" rel="noopener noreferrer">
+                            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-ink">
+                              View Full Resolution
+                            </Button>
+                          </a>
+                        )}
                       </div>
                     </div>
-                    
-                    {project.link ? (
-                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="block">
-                        <Button variant="ghost" className="w-full group-hover:bg-primary/10 transition-colors">
-                          <Eye className="w-4 h-4 mr-2" />
-                          View
-                        </Button>
-                      </a>
-                    ) : (
-                      <Button variant="ghost" className="w-full group-hover:bg-primary/10 transition-colors">
-                        <Eye className="w-4 h-4 mr-2" />
-                        View
-                      </Button>
-                    )}
-                  </div>
-                </Card>
+                  </DialogContent>
+                </Dialog>
               ))}
             </div>
             
