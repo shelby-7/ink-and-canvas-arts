@@ -68,6 +68,16 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			backgroundImage: {
+				'gradient-paper': 'var(--gradient-paper)',
+			},
+			boxShadow: {
+				'soft': 'var(--shadow-soft)',
+				'ink': 'var(--shadow-ink)',
+			},
+			transitionTimingFunction: {
+				'smooth': 'var(--transition-smooth)',
+			},
 			keyframes: {
 				'accordion-down': {
 					from: {
