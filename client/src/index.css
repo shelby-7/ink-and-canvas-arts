@@ -110,6 +110,16 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('/attached_assets/image-from-rawpixel-id-6129082-jpeg_1756592101396.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -119,6 +129,7 @@ All colors MUST be HSL.
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
+    z-index: -1;
   }
   
   .brutal-texture {
