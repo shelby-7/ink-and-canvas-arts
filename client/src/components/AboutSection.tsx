@@ -44,7 +44,7 @@ const AboutSection = () => {
 
             <div className="pt-4">
               <a 
-                href="#contact" 
+                href="/contact" 
                 className="inline-block px-8 py-4 bg-primary text-primary-foreground font-bold font-mono tracking-wider brutal-card pixelated-hover uppercase"
               >
                 CONTACT ME

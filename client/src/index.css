@@ -9,10 +9,10 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Brutalist dark theme */
-    --background: 0 0% 8%;
-    --background-texture: 0 0% 6%;
+    --background: 0 0% 4%;
+    --background-texture: 0 0% 2%;
     --foreground: 0 0% 95%;
-    --noise-spot: 0 0% 3%;
+    --noise-spot: 0 0% 1%;
 
     --card: 0 0% 12%;
     --card-foreground: 0 0% 95%;

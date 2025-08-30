@@ -11,10 +11,10 @@ const Index = () => {
       <Navigation />
       <main className="pt-16">
         <AboutSection />
-        <SoftwareSection />
         <ExperienceSection />
         <WorksSection />
         <ClientsSection />
+        <SoftwareSection />
       </main>
     </div>
   );
