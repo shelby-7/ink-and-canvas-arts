@@ -1,4 +1,5 @@
 import { Card } from '@/components/ui/card';
+import profileImage from '@assets/IMG_8505_1756588754250.jpg';
 
 const AboutSection = () => {
   return (
@@ -9,9 +10,11 @@ const AboutSection = () => {
           <div className="flex justify-center lg:justify-start">
             <div className="relative">
               <div className="w-80 h-80 bg-gradient-harsh brutal-card brutal-texture overflow-hidden pixelated-hover">
-                <div className="w-full h-full bg-muted flex items-center justify-center text-muted-foreground text-6xl font-bold font-mono">
-                  <span className="text-center tracking-wider">FACE<br />PICTURE</span>
-                </div>
+                <img 
+                  src={profileImage} 
+                  alt="Aditya Bagde - The_Maskedgrapher"
+                  className="w-full h-full object-cover pixelated-profile"
+                />
               </div>
               {/* Brutal decorative elements */}
               <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary border-2 border-foreground"></div>
@@ -30,15 +33,15 @@ const AboutSection = () => {
             
             <div className="bg-gradient-harsh brutal-card brutal-texture p-6">
               <p className="text-lg text-foreground leading-relaxed mb-4 font-mono">
-                LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.
+                "I make dreams real and reality dreams"
               </p>
               
               <p className="text-lg text-foreground leading-relaxed mb-4 font-mono">
-                DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT NULLA PARIATUR.
+                Hey, I am Aditya Bagde, Your Photographer, Videographer and 3D artist, all in one, i keep the power of my past 6 years of creative work in the palm of your hand, salute to whoever gets that reference, i can color grade like you can only see in your dreams and make 3d scenes feel so real they might as well be your background.
               </p>
               
               <p className="text-lg text-foreground leading-relaxed font-mono">
-                SED UT PERSPICIATIS UNDE OMNIS ISTE NATUS ERROR SIT VOLUPTATEM ACCUSANTIUM DOLOREMQUE LAUDANTIUM.
+                "lets tell your next story together", sounds fun? contact me below
               </p>
             </div>
 

@@ -26,7 +26,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="font-bold text-xl text-foreground hover:text-primary transition-colors font-mono tracking-wider uppercase">
-            PORTFOLIO
+            THE_MASKEDGRAPHER
           </Link>
 
           {/* Desktop Navigation */}

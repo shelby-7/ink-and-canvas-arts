@@ -1,7 +1,7 @@
 import Navigation from '@/components/Navigation';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogTrigger, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { ArrowLeft, Calendar, X, Palette, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -134,6 +134,7 @@ const ThreeDArt = () => {
                   
                   <DialogContent className="max-w-4xl max-h-[90vh] p-0 bg-background border-2 border-foreground">
                     <DialogTitle className="sr-only">{project.title}</DialogTitle>
+                    <DialogDescription className="sr-only">{project.description}</DialogDescription>
                     <div className="relative">
                       <img 
                         src={project.image} 

@@ -161,4 +161,11 @@ All colors MUST be HSL.
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0px hsl(var(--foreground));
   }
+
+  .pixelated-profile {
+    filter: saturate(70%) contrast(1.1);
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
 }
